@@ -46,4 +46,7 @@ model Purchase {
 
   customer Customer @relation(fields: [customerId], references: [id])
   product  Product  @relation(fields: [productId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }
