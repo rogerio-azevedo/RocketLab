@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma/prisma.service';
 
-// type CreateCustomerParams = {
-//   authUserId: string;
-// };
+type CreateStudentParams = {
+  authUserId: string;
+};
 
 @Injectable()
 export class StudentsService {
@@ -25,11 +25,11 @@ export class StudentsService {
     });
   }
 
-  // async createCustomer({ authUserId }: CreateCustomerParams) {
-  //   return this.prisma.customer.create({
-  //     data: {
-  //       authUserId,
-  //     },
-  //   });
-  // }
+  createStudent({ authUserId }: CreateStudentParams) {
+    return this.prisma.student.create({
+      data: {
+        authUserId,
+      },
+    });
+  }
 }

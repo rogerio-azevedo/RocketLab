@@ -31,10 +31,4 @@ export class StudentsResolver {
   enrollments(@Parent() student: Student) {
     return this.enrollmentsService.listEnrollmentsByStudent(student.id);
   }
-
-  // @UseGuards(AuthorizationGuard)
-  // @Mutation(() => Product)
-  // createProduct(@Args('data') data: CreateProductInput) {
-  //   return this.productsService.createProduct(data);
-  // }
 }
